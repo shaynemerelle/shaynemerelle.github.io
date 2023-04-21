@@ -1,0 +1,39 @@
+<html>
+<head>
+<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<title>Test Page</title>
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+  article, aside, figure, footer, header, hgroup,
+  menu, nav, section { display: block; }
+  body {
+    font-family: sans-serif;
+  }
+  p {
+    margin: 0px;
+  }
+</style>
+</head>
+<body>
+  <a id='golink' href='https://www.youtube.com/watch?v=FS3WACQHVU0'>Go Somewhere</a>
+<script>
+jQuery(function($) {
+    $('#golink').click(function() {
+        return false;
+    }).dblclick(function() {
+        window.location = this.href;
+        return false;
+    }).keydown(function(event) {
+      switch (event.which) {
+        case 13: // Enter
+        case 32: // Space
+          window.location = this.href;
+          return false;
+      }
+    });
+});
+</script>
+</body>
+</html>
